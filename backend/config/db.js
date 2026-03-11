@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://yukesh:Yukesh123@cluster0.7nmeoom.mongodb.net/?appName=Cluster0"
+      process.env.MONGO_URL
     );
 
     console.log("✅ DB Connected Successfully");
