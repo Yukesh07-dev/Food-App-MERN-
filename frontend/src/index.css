@@ -7,18 +7,60 @@
   scroll-behavior: smooth;
 }
 
+/* body{
+  min-height: 100vh;
+} */
+/* body{
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(0, 255, 200, 0.22), transparent 30%),
+    radial-gradient(circle at 90% 8%, rgba(255, 0, 200, 0.22), transparent 32%),
+    radial-gradient(circle at 85% 75%, rgba(120, 80, 255, 0.24), transparent 34%),
+    radial-gradient(circle at 15% 85%, rgba(255, 120, 0, 0.20), transparent 30%),
+    linear-gradient(145deg, #12051f 0%, #1c0933 28%, #2a0f4a 55%, #35125f 75%, #1d0a35 100%);
+  color: #f3eefe;
+} */
 body{
   min-height: 100vh;
+  background:
+    linear-gradient(145deg, #030507 0%, #070b10 45%, #0b1219 100%);
+  color: #f2f5f7;
 }
+
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.025) 0px,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%);
+  mix-blend-mode: screen;
+}
+
 
 a{
   text-decoration: none;
   color: inherit;
 }
+/* 
+.app{
+  width: 80%;
+  margin: auto;
+} */
 
 .app{
   width: 80%;
   margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeIn{
@@ -28,4 +70,18 @@ a{
   100%{
     opacity: 1;
   }
+}
+
+/* @keyframes premiumPulse{
+  0%{ filter: brightness(1); }
+  50%{ filter: brightness(1.03); }
+  100%{ filter: brightness(1); }
+} */
+
+body{
+  animation: premiumPulse 12s ease-in-out infinite;
+}
+
+body::after{
+  animation: neonPulse 8s ease-in-out infinite;
 }

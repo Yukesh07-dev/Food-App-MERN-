@@ -5,7 +5,7 @@ import './Home.css'
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
 import AppDownload from '../../components/AppDownload/AppDownload'
-const Home = () => {
+const Home = ({searchText}) => {
 
       const[category,setCategory]=useState("All");
   
@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <Header/>
       <ExploreMenu category={category} setCategory={setCategory}/>
-      <FoodDisplay category={category}/>
+      <FoodDisplay category={category} searchText={searchText}/>
       <AppDownload/>
     </div>
   )

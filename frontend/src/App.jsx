@@ -4,21 +4,29 @@ import { Route, Routes, useSearchParams } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
+import Verify from "./pages/Verify/Verify";
 import Footer from './components/Footer/Footer'
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import MyOrder from "./pages/MyOrders/MyOrder";
 const App = () => {
 
   const[showLogin,setShowLogin]=useState(false)
-
+  const [searchText, setSearchText] = useState("");
+  const [inputText, setInputText] = useState("");
+  
   return (
     <>
+   
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
       <div className="app">
-        <Navbar setShowLogin={setShowLogin}/>
+        <Navbar setShowLogin={setShowLogin} searchText={searchText} setSearchText={setSearchText} inputText={inputText} setInputText={setInputText}/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home searchText={searchText} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
+          <Route path='/verify' element={<Verify/>}/>
+          <Route path='/myorders' element={<MyOrder/>}/>
         </Routes>
       </div>
       <Footer/>
