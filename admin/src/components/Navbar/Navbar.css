@@ -1,4 +1,4 @@
-.navbar{
+/* .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,4 +11,54 @@
 
 .navbar .profile{
     width: 35px;
+} */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4%;
+    margin: 10px 12px 18px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #0f1f2a 0%, #163041 38%, #1d4154 70%, #27506a 100%);
+    border: 1px solid rgba(170,235,255,0.18);
+    box-shadow:
+      0 10px 24px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.navbar .logo{
+    width: clamp(110px, 11vw, 170px);
+    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.18));
+}
+
+.navbar .profile{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, #7ee7ff, #8affc1);
+    border: 1px solid rgba(255,255,255,0.22);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.30);
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.navbar .profile:hover{
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.38), 0 0 12px rgba(126,231,255,0.35);
+}
+
+@media(max-width: 768px){
+    .navbar{
+        margin: 8px 8px 0;
+        padding: 10px 3.5%;
+        border-radius: 12px;
+    }
+
+    .navbar .profile{
+        width: 34px;
+        height: 34px;
+    }
 }
