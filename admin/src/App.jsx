@@ -11,7 +11,7 @@ import { useState } from 'react'
 
 const App = () => {
 
-  const url = "http://localhost:4000"
+  const url = "https://food-app-backend-fu0a.onrender.com"
 
   return (
     <div>
